@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Library {
 
-  private List<Book> bookList;
+  public List<Book> bookList;
 
   public Library() {
     this.bookList = new ArrayList<>();
