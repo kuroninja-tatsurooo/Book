@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Library {
 
-  public List<Book> bookList;
+  private List<Book> bookList;
 
   public Library() {
     this.bookList = new ArrayList<>();
@@ -15,30 +15,33 @@ public class Library {
     bookList.add(book);
   }
 
-  public Book searchByTitle(String title) {
+  public List<Book> searchByTitle(String title) {
+    List<Book> result = new ArrayList<>();
     for (Book book : bookList) {
       if (book.getTitle().startsWith(title)) {
-        return book;
+        result.add(book);
       }
     }
-    return null;
+    return result;
   }
 
-  public Book searchByAuthor(String author) {
+  public List<Book> searchByAuthor(String author) {
+    List<Book> result = new ArrayList<>();
     for (Book book : bookList) {
-      if (book.getAuthor().equalsIgnoreCase(author)) {
-        return book;
+      if (book.getAuthor().startsWith(author)) {
+        result.add(book);
       }
     }
-    return null;
+    return result;
   }
 
-  public Book searchByNumber(int number) {
+  public List<Book> searchByNumber(int number) {
+    List<Book> result = new ArrayList<>();
     for (Book book : bookList) {
       if (book.getNumber() == number) {
-        return book;
+        result.add(book);
       }
     }
-    return null;
+    return result;
   }
 }
